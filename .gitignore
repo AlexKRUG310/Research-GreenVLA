@@ -52,3 +52,4 @@ he_raw_data/
 *.safetensors
 outputs/
 pretrained_models/
+mujoco_menagerie/
