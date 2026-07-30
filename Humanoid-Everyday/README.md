@@ -1,0 +1,318 @@
+# Humanoid Everyday Dataset
+
+![teaser](./assets/teaser.jpg)
+![teaser](./assets/data_dist.png)
+
+**The Humanoid Everyday Dataset** is a diverse collection of humanoid robot (Unitree G1 and H1) demonstrations recorded at 30 Hz across everyday tasks. This dataset supports research in robot learning, imitation, and perception.
+
+---
+
+## Overview
+
+- **Total Download Size:** ~500 GB (across 250 tasks), over 100,000 time-step recorded
+- **Tasks:** 260 diverse scenarios (loco-manipulation, basic manipulation, tool use, deformables, articulated objects, human–robot interaction)
+- **Episodes per task:** 40
+- **Recording Frequency:** 30 Hz
+
+### **Modalities captured**
+
+- **Low-dimensional:**
+  - Joint states (arm, leg, hand)
+  - IMU (orientation, accelerometer, gyroscope, RPY)
+  - Odometry/Kinematics (position, velocity, orientation)
+  - Hand pressure sensors (G1 only)
+  - Teleoperator hands/head actions from Apple Vision Pro
+  - Inverse kinematics data
+
+- **High-dimensional:**
+  - Egocentric RGB images (480x640x3, PNG)
+  - Depth maps (480x640, uint16)
+  - LiDAR point clouds (~6 k points per step, PCD)
+
+Each episode is a continuous interaction sequence; use the provided dataloader for convenient access to both low‑dimensional streams and visual/lidar files.
+
+---
+
+## Quickstart
+
+**Important!!!:** It is recommended to load our the entire dataset using the lerobot format [here](https://huggingface.co/datasets/USC-GVL/humanoid-everyday) (~1T). If you just want the states and actions from all the trajectories and don't care about the other modalities, you can use the lite datasets from [here](https://huggingface.co/datasets/USC-GVL/Humanoid-Everyday-H1) and [here](https://huggingface.co/datasets/USC-GVL/Humanoid-Everyday-G1).
+
+If you wish to convert to lerobot yourself, you can use the script provided at `scripts/he2lerobot.py`, and put your downloaded unzipped trajectories in `<dataset_name>/<task_category>/`, and run the script on `<dataset_name>`.
+
+### Requirements
+
+- **Python:** >= 3.8
+- **Memory**: >= 16GB RAM recommended
+
+### Install humanoid_everyday dataloader
+
+```bash
+git clone https://github.com/ausbxuse/Humanoid-Everyday
+cd Humanoid-Everyday
+pip install -e .
+```
+
+### Download dataset
+
+Please visit [our task spreadsheet](https://docs.google.com/spreadsheets/d/158Wzf8Xywky3aHJSCfp3OZxf4bkhzAJdcG94eHf8gVc/edit?gid=1307250382#gid=1307250382) to download your task of interest.
+
+### Example usage
+
+```python
+from humanoid_everyday import Dataloader
+
+# Load your downloaded task's dataset zip file (e.g., the "push_a_button" task)
+ds = Dataloader("~/Downloads/push_a_button.zip")
+print("Episode length of dataset:", len(ds))
+
+# Displaying high dimensional data at first episode, second timestep.
+ds.display_image(0, 1)
+ds.display_depth_point_cloud(0, 1)
+ds.display_lidar_point_cloud(0, 1)
+for i, episode in enumerate(ds):
+    if i == 1:  # episode 1
+        robot_type = "G1" if "robot_type" in episode[0] else "H1"
+        print("Robot type:", robot_type)
+        states = np.array(episode[0]["states"]["arm_state"] + episode[0]["states"]["hand_state"])
+        print("States shape:", states.shape) # 26 for H1 and 28 for G1
+
+        if robot_type == "H1":  # We recorded internal hand representation for H1 hand data, which needs post-processing
+            left_qpos = episode[0]["actions"]["left_angles"]
+            right_qpos = episode[0]["actions"]["right_angles"]
+
+            right_hand_angles = [1.7 - right_qpos[i] for i in [4, 6, 2, 0]]
+            right_hand_angles.append(1.2 - right_qpos[8])
+            right_hand_angles.append(0.5 - right_qpos[9])
+            left_hand_angles = [1.7 - left_qpos[i] for i in [4, 6, 2, 0]]
+            left_hand_angles.append(1.2 - left_qpos[8])
+            left_hand_angles.append(0.5 - left_qpos[9])
+
+            hand_actions = left_hand_angles + right_hand_angles # 12-dim H1 hand actions
+        else:   # For G1 data
+            hand_actions = episode[0]["actions"]["left_angles"] + episode[0]["actions"]["right_angles"] # 14-dim G1 hand actions
+
+        arm_actions = episode[0]["actions"]["sol_q"] # 14-dim arm actions
+        actions = np.array(arm_actions + hand_actions)
+        print("Actions shape:", actions.shape) # 26 for H1 and 28 for G1
+
+        print("RGB image shape:", episode[0]["image"].shape)  # (480, 640, 3)
+        print("Depth map shape:", episode[0]["depth"].shape)  # (480, 640)
+        print("LiDAR points shape:", episode[0]["lidar"].shape)  # (~6000, 3)
+
+        batch = episode[0:4]  # batch loading episodes
+        print(batch[1]["image"].shape)
+        print(batch[0]["image"].shape)
+```
+
+The `Dataloader` provides random access to episodes and time steps as a nested list `data[episode][step]`.
+
+---
+
+## Camera Intrinsics (realsense D435)
+
+Calibrations for the Intel RealSense D435 used with each robot platform.
+
+### H1
+
+#### Color Intrinsics
+- **Resolution:** `640 × 480`
+- **Model:** `distortion.inverse_brown_conrady`
+- **Focal length:** `fx = 606.8150634765625`, `fy = 606.3350219726562`
+- **Principal point:** `cx = 321.4926452636719`, `cy = 247.55596923828125`
+- **Distortion coefficients:** `[0.0, 0.0, 0.0, 0.0, 0.0]`
+
+#### Depth Intrinsics
+- **Resolution:** `640 × 480`
+- **Model:** `distortion.brown_conrady`
+- **Focal length:** `fx = 392.0318908691406`, `fy = 392.0318908691406`
+- **Principal point:** `cx = 320.19580078125`, `cy = 235.5817413330078`
+- **Distortion coefficients:** `[0.0, 0.0, 0.0, 0.0, 0.0]`
+
+#### Depth-to-Color Extrinsics
+- **Rotation (3×3):**
+  ```text
+  [ 0.9999892115592957, -0.004639937076717615, -0.00007807503425283358 ]
+  [ 0.004640140105038881,  0.9999852180480957,   0.0028337170369923115 ]
+  [ 0.00006492561078630388, -0.0028340488206595182, 0.9999960064888 ]
+  ```
+- **Translation (m):** `[0.014403801411390305, -0.00011738666944438592, 0.0005498263635672629]`
+
+### G1
+
+#### Color Intrinsics
+- **Resolution:** `640 × 480`
+- **Model:** `distortion.inverse_brown_conrady`
+- **Focal length:** `fx = 606.2996826171875`, `fy = 606.292236328125`
+- **Principal point:** `cx = 330.7660217285156`, `cy = 252.64605712890625`
+- **Distortion coefficients:** `[0.0, 0.0, 0.0, 0.0, 0.0]`
+
+#### Depth Intrinsics
+- **Resolution:** `640 × 480`
+- **Model:** `distortion.brown_conrady`
+- **Focal length:** `fx = 386.00103759765625`, `fy = 386.00103759765625`
+- **Principal point:** `cx = 320.4173278808594`, `cy = 240.45770263671875`
+- **Distortion coefficients:** `[0.0, 0.0, 0.0, 0.0, 0.0]`
+
+#### Depth-to-Color Extrinsics
+- **Rotation (3×3):**
+  ```text
+  [ 0.999901533126831,  -0.012537548318505287,  0.006302413530647755 ]
+  [ 0.012552149593830109,  0.9999186396598816, -0.002282573375850916 ]
+  [ -0.006273282691836357,  0.002361457562074065,  0.9999775290489197 ]
+  ```
+- **Translation (m):** `[0.01490413211286068, -0.000005230475835560355, 0.00011887117580045015]`
+
+## Data Schema
+
+Each time step is represented by a Python dictionary with the following fields:
+
+```python
+{
+    # Scalar identifiers
+    "time":       np.float64,                # UNIX timestamp (s)
+    "robot_type": np.str_,                   # Robot model identifier (G1 only, H1_2 datasets do  not have this field)
+
+    # Robot states
+    "states": {
+        "arm_state":   np.ndarray((14,),  dtype=np.float64),  # 14 joint angles
+        # Arm joint indices
+        #   0: LeftShoulderPitch
+        #   1: LeftShoulderRoll
+        #   2: LeftShoulderYaw
+        #   3: LeftElbow
+        #   4: LeftWristRoll
+        #   5: LeftWristPitch
+        #   6: LeftWristYaw
+        #   7: RightShoulderPitch
+        #   8: RightShoulderRoll
+        #   9: RightShoulderYaw
+        #  10: RightElbow
+        #  11: RightWristRoll
+        #  12: RightWristPitch
+        #  13: RightWristYaw
+        "leg_state":   np.ndarray((15 or 13,),  dtype=np.float64),  # 15 joint angles for G1, 13 for H1_2
+
+        # Leg/waist joint indices
+        #   0: LeftHipYaw for H1; LeftHipPitch for G1
+        #   1: LeftHipRoll
+        #   2: LeftHipPitch for H1; LeftHipYaw for G1
+        #   3: LeftKnee
+        #   4: LeftAnkle
+        #   5: LeftAnkleRoll
+        #   6: RightHipYaw for H1; RightHipPitch for G1
+        #   7: RightHipRoll
+        #   8: RightHipPitch for H1; RightHipYaw for G1
+        #   9: RightKnee
+        #  10: RightAnkle
+        #  11: RightAnkleRoll
+        # Waist
+        #  12: kWaistYaw
+        #  [13]: kWaistRoll # G1 only
+        #  [14]: kWaistPitch # G1 only
+        "hand_state":  np.ndarray((14 or 12,),  dtype=np.float64),  # 14 joint angles for Unitree Dex3 Hand, 12 for Inspire Dextrous Hand
+        # Dex3 Hand joint indices
+        #   0: LeftThumbRotation
+        #   1: LeftThumbLowerMotor
+        #   2: LeftThumbUpperMotor
+        #   3: LeftMiddleFingerLowerMotor
+        #   4: LeftMiddleFingerUpperMotor
+        #   5: LeftIndexFingerLowerMotor
+        #   6: LeftIndexFingerUpperMotor
+        #   7: RightThumbRotation
+        #   8: RightThumbLowerMotor
+        #   9: RightThumbUpperMotor
+        #  10: RightMiddleFingerLowerMotor
+        #  11: RightMiddleFingerUpperMotor
+        #  12: RightIndexFingerLowerMotor
+        #  13: RightIndexFingerUpperMotor
+
+        # Inspire hand
+        #   0: LeftPinkyBending
+        #   1: LeftRingBending
+        #   2: LeftMiddleBending
+        #   3: LeftIndexBending
+        #   4: LeftThumbBending
+        #   5: LeftThumbRotating
+        #   6: RightPinkyBending
+        #   7: RightRingBending
+        #   8: RightMiddleBending
+        #   9: RightIndexBending
+        #   10: RightThumbBending
+        #   11: RightThumbRotating
+
+        "hand_pressure_state": [                                # List of per-sensor readings (9 sensors per hand)
+            {
+                "sensor_id":       np.int32,
+                "sensor_type":     np.str_,                    # "A" or "B"
+                "usable_readings": np.ndarray((3,), dtype=np.float64)  # Up to 4 pressure values
+            },
+            …  # one entry per sensor
+        ],
+
+        "imu": {
+            "quaternion":    np.ndarray((4,), dtype=np.float64),  # [w, x, y, z]
+            "accelerometer": np.ndarray((3,), dtype=np.float64),  # [ax, ay, az]
+            "gyroscope":     np.ndarray((3,), dtype=np.float64),  # [gx, gy, gz]
+            "rpy":           np.ndarray((3,), dtype=np.float64)   # [roll, pitch, yaw]
+        },
+
+        "odometry": {
+            "position": np.ndarray((3,), dtype=np.float64),  # [x, y, z]
+            "velocity": np.ndarray((3,), dtype=np.float64),  # [vx, vy, vz]
+            "rpy":      np.ndarray((3,), dtype=np.float64),  # [roll, pitch, yaw]
+            "quat":     np.ndarray((4,), dtype=np.float64)   # [w, x, y, z]
+        }
+    },
+
+    # Control commands and solutions
+    "actions": {
+        "right_angles": np.ndarray((7,),  dtype=np.float64),  # commanded joint angles
+        "left_angles":  np.ndarray((7,),  dtype=np.float64),  # commanded joint angles
+        "armtime":      np.float64,                         # timestamp
+        "iktime":       np.float64,                         # timestamp
+
+        "sol_q":        np.ndarray((14,), dtype=np.float64),  # solution joint angles
+        "tau_ff":       np.ndarray((14,), dtype=np.float64),  # feedforward torques
+
+        "head_rmat":    np.ndarray((3, 3),dtype=np.float64),  # rotation matrix
+        "left_pose":    np.ndarray((4, 4),dtype=np.float64),  # homogeneous transform
+        "right_pose":   np.ndarray((4, 4),dtype=np.float64)   # homogeneous transform
+    },
+
+    # High-dimensional observations
+    "image": np.ndarray((480, 640, 3), dtype=np.uint8),     # RGB image
+    "depth": np.ndarray((480, 640),      dtype=np.uint16),  # Depth map
+    "lidar": np.ndarray((~6000, 3),      dtype=np.float64) # around 6000 points for lidar point cloud
+}
+```
+
+---
+
+## Raw Data Organization
+
+If you wish to use your own custom loader, here is the directory outline of Humanoid Everyday's raw data for a single task
+
+```
+<task_name>/
+├── episode_0/
+│   ├── data.json       # Low‑dimensional sensor/action data + file paths
+│   ├── color/          # RGB images (480×640×3, PNG)
+│   ├── depth/          # Depth maps (480×640, uint16)
+│   └── lidar/          # LiDAR point clouds (PCD files)
+├── episode_1/
+│   └── …
+└── …
+```
+
+- **data.json:** Contains arrays of sensor readings and relative file paths for visual/lidar data.
+- **color/**, **depth/**, **lidar/**: Raw files for each time step.
+
+---
+
+# Evaluation
+
+You can evaluate your trained policy using the Humanoid Everyday dataset [here](https://humaoideveryday.com).
+
+# License
+
+This dataset is released under the MIT License

@@ -1,0 +1,168 @@
+{
+    "codebase_version": "2.0.1",
+    "robot_type": "g1",
+    "total_episodes": 40,
+    "total_frames": 19335,
+    "total_tasks": 1,
+    "total_videos": 40,
+    "total_chunks": 1,
+    "chunks_size": 1000,
+    "fps": 30,
+    "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
+    "video_path": "videos/chunk-{episode_chunk:03d}/egocentric/episode_{episode_index:06d}.mp4",
+    "features": {
+        "observation.images.egocentric": {
+            "dtype": "video",
+            "shape": [
+                480,
+                640,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channel"
+            ],
+            "video_info": {
+                "video.fps": 30.0,
+                "video.codec": "h264",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "has_audio": false
+            }
+        },
+        "observation.depth.egocentric": {
+            "dtype": "float32",
+            "shape": [
+                480,
+                640
+            ],
+            "names": [
+                "height",
+                "width"
+            ]
+        },
+        "observation.lidar": {
+            "dtype": "float32",
+            "shape": [
+                -1,
+                3
+            ]
+        },
+        "observation.imu.quaternion": {
+            "dtype": "float32",
+            "shape": [
+                4
+            ]
+        },
+        "observation.imu.accelerometer": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.imu.gyroscope": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.imu.rpy": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.odometry.position": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.odometry.velocity": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.odometry.rpy": {
+            "dtype": "float32",
+            "shape": [
+                3
+            ]
+        },
+        "observation.odometry.quat": {
+            "dtype": "float32",
+            "shape": [
+                4
+            ]
+        },
+        "observation.arm_joints": {
+            "dtype": "float32",
+            "shape": [
+                -1
+            ]
+        },
+        "observation.leg_joints": {
+            "dtype": "float32",
+            "shape": [
+                -1
+            ]
+        },
+        "observation.hand_joints": {
+            "dtype": "float32",
+            "shape": [
+                -1
+            ]
+        },
+        "observation.tactile": {
+            "dtype": "float32",
+            "shape": [
+                -1,
+                -1
+            ]
+        },
+        "action": {
+            "dtype": "float32",
+            "shape": [
+                -1
+            ]
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ]
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        },
+        "next.done": {
+            "dtype": "bool",
+            "shape": [
+                1
+            ]
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        }
+    }
+}

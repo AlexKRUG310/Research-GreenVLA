@@ -1,0 +1,13 @@
+_target_: lerobot.common.datasets.data_config.LeRobotG1DataConfig
+asset_id: g1_humanoid_everyday_loco
+repo_id: null
+root_dir: "/home/human/Kruglov/humanoid_everyday_loco_lerobot"
+action_sequence_keys: [action]
+action_horizon: 1
+action_offset: 0
+action_sample_step: 1
+state_dim: 28
+control_mode: joint
+map_to_unified_space: false
+validation_episodes: null
+return_subtasks: false
