@@ -1,1 +1,4 @@
-{"task_index": 0, "task": "loco_manipulation/walk_towards_a_desk_and_pick_up_a_bottle_and_put_it_in_a_container", "category": "loco_manipulation", "description": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"task_index": 0, "task": "loco_manipulation/place_a_cube_in_a_bag", "category": "loco_manipulation", "description": "Place a cube into a bag."}
+{"task_index": 1, "task": "loco_manipulation/stack_two_cubes", "category": "loco_manipulation", "description": "Stack two cubes on top of each other."}
+{"task_index": 2, "task": "loco_manipulation/unstack_two_cubes", "category": "loco_manipulation", "description": "Unstack two cubes from each other."}
+{"task_index": 3, "task": "loco_manipulation/walk_towards_a_desk_and_pick_up_a_bottle_and_put_it_in_a_container", "category": "loco_manipulation", "description": "Walk towards a desk, pick up a bottle, and put it in a container."}

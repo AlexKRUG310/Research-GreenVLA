@@ -1,40 +1,160 @@
-{"episode_index": 0, "tasks": [0], "length": 460, "dataset_from_index": 0, "dataset_to_index": 459, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 1, "tasks": [0], "length": 433, "dataset_from_index": 460, "dataset_to_index": 892, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 2, "tasks": [0], "length": 440, "dataset_from_index": 893, "dataset_to_index": 1332, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 3, "tasks": [0], "length": 397, "dataset_from_index": 1333, "dataset_to_index": 1729, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 4, "tasks": [0], "length": 438, "dataset_from_index": 1730, "dataset_to_index": 2167, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 5, "tasks": [0], "length": 501, "dataset_from_index": 2168, "dataset_to_index": 2668, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 6, "tasks": [0], "length": 494, "dataset_from_index": 2669, "dataset_to_index": 3162, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 7, "tasks": [0], "length": 415, "dataset_from_index": 3163, "dataset_to_index": 3577, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 8, "tasks": [0], "length": 476, "dataset_from_index": 3578, "dataset_to_index": 4053, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 9, "tasks": [0], "length": 536, "dataset_from_index": 4054, "dataset_to_index": 4589, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 10, "tasks": [0], "length": 544, "dataset_from_index": 4590, "dataset_to_index": 5133, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 11, "tasks": [0], "length": 483, "dataset_from_index": 5134, "dataset_to_index": 5616, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 12, "tasks": [0], "length": 618, "dataset_from_index": 5617, "dataset_to_index": 6234, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 13, "tasks": [0], "length": 396, "dataset_from_index": 6235, "dataset_to_index": 6630, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 14, "tasks": [0], "length": 476, "dataset_from_index": 6631, "dataset_to_index": 7106, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 15, "tasks": [0], "length": 434, "dataset_from_index": 7107, "dataset_to_index": 7540, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 16, "tasks": [0], "length": 453, "dataset_from_index": 7541, "dataset_to_index": 7993, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 17, "tasks": [0], "length": 478, "dataset_from_index": 7994, "dataset_to_index": 8471, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 18, "tasks": [0], "length": 435, "dataset_from_index": 8472, "dataset_to_index": 8906, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 19, "tasks": [0], "length": 501, "dataset_from_index": 8907, "dataset_to_index": 9407, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 20, "tasks": [0], "length": 490, "dataset_from_index": 9408, "dataset_to_index": 9897, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 21, "tasks": [0], "length": 433, "dataset_from_index": 9898, "dataset_to_index": 10330, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 22, "tasks": [0], "length": 530, "dataset_from_index": 10331, "dataset_to_index": 10860, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 23, "tasks": [0], "length": 578, "dataset_from_index": 10861, "dataset_to_index": 11438, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 24, "tasks": [0], "length": 494, "dataset_from_index": 11439, "dataset_to_index": 11932, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 25, "tasks": [0], "length": 456, "dataset_from_index": 11933, "dataset_to_index": 12388, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 26, "tasks": [0], "length": 455, "dataset_from_index": 12389, "dataset_to_index": 12843, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 27, "tasks": [0], "length": 489, "dataset_from_index": 12844, "dataset_to_index": 13332, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 28, "tasks": [0], "length": 519, "dataset_from_index": 13333, "dataset_to_index": 13851, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 29, "tasks": [0], "length": 520, "dataset_from_index": 13852, "dataset_to_index": 14371, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 30, "tasks": [0], "length": 563, "dataset_from_index": 14372, "dataset_to_index": 14934, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 31, "tasks": [0], "length": 569, "dataset_from_index": 14935, "dataset_to_index": 15503, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 32, "tasks": [0], "length": 469, "dataset_from_index": 15504, "dataset_to_index": 15972, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 33, "tasks": [0], "length": 521, "dataset_from_index": 15973, "dataset_to_index": 16493, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 34, "tasks": [0], "length": 463, "dataset_from_index": 16494, "dataset_to_index": 16956, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 35, "tasks": [0], "length": 457, "dataset_from_index": 16957, "dataset_to_index": 17413, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 36, "tasks": [0], "length": 494, "dataset_from_index": 17414, "dataset_to_index": 17907, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 37, "tasks": [0], "length": 472, "dataset_from_index": 17908, "dataset_to_index": 18379, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 38, "tasks": [0], "length": 432, "dataset_from_index": 18380, "dataset_to_index": 18811, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
-{"episode_index": 39, "tasks": [0], "length": 523, "dataset_from_index": 18812, "dataset_to_index": 19334, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 0, "tasks": [0], "length": 370, "dataset_from_index": 0, "dataset_to_index": 369, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 1, "tasks": [0], "length": 386, "dataset_from_index": 370, "dataset_to_index": 755, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 2, "tasks": [0], "length": 402, "dataset_from_index": 756, "dataset_to_index": 1157, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 3, "tasks": [0], "length": 412, "dataset_from_index": 1158, "dataset_to_index": 1569, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 4, "tasks": [0], "length": 311, "dataset_from_index": 1570, "dataset_to_index": 1880, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 5, "tasks": [0], "length": 394, "dataset_from_index": 1881, "dataset_to_index": 2274, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 6, "tasks": [0], "length": 355, "dataset_from_index": 2275, "dataset_to_index": 2629, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 7, "tasks": [0], "length": 394, "dataset_from_index": 2630, "dataset_to_index": 3023, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 8, "tasks": [0], "length": 320, "dataset_from_index": 3024, "dataset_to_index": 3343, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 9, "tasks": [0], "length": 540, "dataset_from_index": 3344, "dataset_to_index": 3883, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 10, "tasks": [0], "length": 541, "dataset_from_index": 3884, "dataset_to_index": 4424, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 11, "tasks": [0], "length": 544, "dataset_from_index": 4425, "dataset_to_index": 4968, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 12, "tasks": [0], "length": 433, "dataset_from_index": 4969, "dataset_to_index": 5401, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 13, "tasks": [0], "length": 327, "dataset_from_index": 5402, "dataset_to_index": 5728, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 14, "tasks": [0], "length": 348, "dataset_from_index": 5729, "dataset_to_index": 6076, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 15, "tasks": [0], "length": 563, "dataset_from_index": 6077, "dataset_to_index": 6639, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 16, "tasks": [0], "length": 385, "dataset_from_index": 6640, "dataset_to_index": 7024, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 17, "tasks": [0], "length": 361, "dataset_from_index": 7025, "dataset_to_index": 7385, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 18, "tasks": [0], "length": 442, "dataset_from_index": 7386, "dataset_to_index": 7827, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 19, "tasks": [0], "length": 383, "dataset_from_index": 7828, "dataset_to_index": 8210, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 20, "tasks": [0], "length": 352, "dataset_from_index": 8211, "dataset_to_index": 8562, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 21, "tasks": [0], "length": 363, "dataset_from_index": 8563, "dataset_to_index": 8925, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 22, "tasks": [0], "length": 351, "dataset_from_index": 8926, "dataset_to_index": 9276, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 23, "tasks": [0], "length": 364, "dataset_from_index": 9277, "dataset_to_index": 9640, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 24, "tasks": [0], "length": 350, "dataset_from_index": 9641, "dataset_to_index": 9990, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 25, "tasks": [0], "length": 416, "dataset_from_index": 9991, "dataset_to_index": 10406, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 26, "tasks": [0], "length": 324, "dataset_from_index": 10407, "dataset_to_index": 10730, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 27, "tasks": [0], "length": 356, "dataset_from_index": 10731, "dataset_to_index": 11086, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 28, "tasks": [0], "length": 312, "dataset_from_index": 11087, "dataset_to_index": 11398, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 29, "tasks": [0], "length": 361, "dataset_from_index": 11399, "dataset_to_index": 11759, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 30, "tasks": [0], "length": 424, "dataset_from_index": 11760, "dataset_to_index": 12183, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 31, "tasks": [0], "length": 361, "dataset_from_index": 12184, "dataset_to_index": 12544, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 32, "tasks": [0], "length": 377, "dataset_from_index": 12545, "dataset_to_index": 12921, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 33, "tasks": [0], "length": 450, "dataset_from_index": 12922, "dataset_to_index": 13371, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 34, "tasks": [0], "length": 310, "dataset_from_index": 13372, "dataset_to_index": 13681, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 35, "tasks": [0], "length": 383, "dataset_from_index": 13682, "dataset_to_index": 14064, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 36, "tasks": [0], "length": 364, "dataset_from_index": 14065, "dataset_to_index": 14428, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 37, "tasks": [0], "length": 450, "dataset_from_index": 14429, "dataset_to_index": 14878, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 38, "tasks": [0], "length": 333, "dataset_from_index": 14879, "dataset_to_index": 15211, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 39, "tasks": [0], "length": 325, "dataset_from_index": 15212, "dataset_to_index": 15536, "robot_type": "g1", "instruction": "Place a cube into a bag."}
+{"episode_index": 40, "tasks": [1], "length": 447, "dataset_from_index": 15537, "dataset_to_index": 15983, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 41, "tasks": [1], "length": 439, "dataset_from_index": 15984, "dataset_to_index": 16422, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 42, "tasks": [1], "length": 358, "dataset_from_index": 16423, "dataset_to_index": 16780, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 43, "tasks": [1], "length": 380, "dataset_from_index": 16781, "dataset_to_index": 17160, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 44, "tasks": [1], "length": 419, "dataset_from_index": 17161, "dataset_to_index": 17579, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 45, "tasks": [1], "length": 405, "dataset_from_index": 17580, "dataset_to_index": 17984, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 46, "tasks": [1], "length": 386, "dataset_from_index": 17985, "dataset_to_index": 18370, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 47, "tasks": [1], "length": 413, "dataset_from_index": 18371, "dataset_to_index": 18783, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 48, "tasks": [1], "length": 364, "dataset_from_index": 18784, "dataset_to_index": 19147, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 49, "tasks": [1], "length": 337, "dataset_from_index": 19148, "dataset_to_index": 19484, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 50, "tasks": [1], "length": 475, "dataset_from_index": 19485, "dataset_to_index": 19959, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 51, "tasks": [1], "length": 546, "dataset_from_index": 19960, "dataset_to_index": 20505, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 52, "tasks": [1], "length": 434, "dataset_from_index": 20506, "dataset_to_index": 20939, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 53, "tasks": [1], "length": 374, "dataset_from_index": 20940, "dataset_to_index": 21313, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 54, "tasks": [1], "length": 392, "dataset_from_index": 21314, "dataset_to_index": 21705, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 55, "tasks": [1], "length": 436, "dataset_from_index": 21706, "dataset_to_index": 22141, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 56, "tasks": [1], "length": 424, "dataset_from_index": 22142, "dataset_to_index": 22565, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 57, "tasks": [1], "length": 390, "dataset_from_index": 22566, "dataset_to_index": 22955, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 58, "tasks": [1], "length": 401, "dataset_from_index": 22956, "dataset_to_index": 23356, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 59, "tasks": [1], "length": 381, "dataset_from_index": 23357, "dataset_to_index": 23737, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 60, "tasks": [1], "length": 400, "dataset_from_index": 23738, "dataset_to_index": 24137, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 61, "tasks": [1], "length": 418, "dataset_from_index": 24138, "dataset_to_index": 24555, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 62, "tasks": [1], "length": 392, "dataset_from_index": 24556, "dataset_to_index": 24947, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 63, "tasks": [1], "length": 362, "dataset_from_index": 24948, "dataset_to_index": 25309, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 64, "tasks": [1], "length": 514, "dataset_from_index": 25310, "dataset_to_index": 25823, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 65, "tasks": [1], "length": 369, "dataset_from_index": 25824, "dataset_to_index": 26192, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 66, "tasks": [1], "length": 399, "dataset_from_index": 26193, "dataset_to_index": 26591, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 67, "tasks": [1], "length": 386, "dataset_from_index": 26592, "dataset_to_index": 26977, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 68, "tasks": [1], "length": 405, "dataset_from_index": 26978, "dataset_to_index": 27382, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 69, "tasks": [1], "length": 448, "dataset_from_index": 27383, "dataset_to_index": 27830, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 70, "tasks": [1], "length": 442, "dataset_from_index": 27831, "dataset_to_index": 28272, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 71, "tasks": [1], "length": 489, "dataset_from_index": 28273, "dataset_to_index": 28761, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 72, "tasks": [1], "length": 549, "dataset_from_index": 28762, "dataset_to_index": 29310, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 73, "tasks": [1], "length": 464, "dataset_from_index": 29311, "dataset_to_index": 29774, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 74, "tasks": [1], "length": 383, "dataset_from_index": 29775, "dataset_to_index": 30157, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 75, "tasks": [1], "length": 423, "dataset_from_index": 30158, "dataset_to_index": 30580, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 76, "tasks": [1], "length": 431, "dataset_from_index": 30581, "dataset_to_index": 31011, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 77, "tasks": [1], "length": 484, "dataset_from_index": 31012, "dataset_to_index": 31495, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 78, "tasks": [1], "length": 551, "dataset_from_index": 31496, "dataset_to_index": 32046, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 79, "tasks": [1], "length": 459, "dataset_from_index": 32047, "dataset_to_index": 32505, "robot_type": "g1", "instruction": "Stack two cubes on top of each other."}
+{"episode_index": 80, "tasks": [2], "length": 317, "dataset_from_index": 32506, "dataset_to_index": 32822, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 81, "tasks": [2], "length": 415, "dataset_from_index": 32823, "dataset_to_index": 33237, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 82, "tasks": [2], "length": 368, "dataset_from_index": 33238, "dataset_to_index": 33605, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 83, "tasks": [2], "length": 339, "dataset_from_index": 33606, "dataset_to_index": 33944, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 84, "tasks": [2], "length": 364, "dataset_from_index": 33945, "dataset_to_index": 34308, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 85, "tasks": [2], "length": 343, "dataset_from_index": 34309, "dataset_to_index": 34651, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 86, "tasks": [2], "length": 404, "dataset_from_index": 34652, "dataset_to_index": 35055, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 87, "tasks": [2], "length": 347, "dataset_from_index": 35056, "dataset_to_index": 35402, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 88, "tasks": [2], "length": 373, "dataset_from_index": 35403, "dataset_to_index": 35775, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 89, "tasks": [2], "length": 374, "dataset_from_index": 35776, "dataset_to_index": 36149, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 90, "tasks": [2], "length": 410, "dataset_from_index": 36150, "dataset_to_index": 36559, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 91, "tasks": [2], "length": 363, "dataset_from_index": 36560, "dataset_to_index": 36922, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 92, "tasks": [2], "length": 365, "dataset_from_index": 36923, "dataset_to_index": 37287, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 93, "tasks": [2], "length": 324, "dataset_from_index": 37288, "dataset_to_index": 37611, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 94, "tasks": [2], "length": 347, "dataset_from_index": 37612, "dataset_to_index": 37958, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 95, "tasks": [2], "length": 335, "dataset_from_index": 37959, "dataset_to_index": 38293, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 96, "tasks": [2], "length": 349, "dataset_from_index": 38294, "dataset_to_index": 38642, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 97, "tasks": [2], "length": 279, "dataset_from_index": 38643, "dataset_to_index": 38921, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 98, "tasks": [2], "length": 463, "dataset_from_index": 38922, "dataset_to_index": 39384, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 99, "tasks": [2], "length": 361, "dataset_from_index": 39385, "dataset_to_index": 39745, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 100, "tasks": [2], "length": 316, "dataset_from_index": 39746, "dataset_to_index": 40061, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 101, "tasks": [2], "length": 299, "dataset_from_index": 40062, "dataset_to_index": 40360, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 102, "tasks": [2], "length": 334, "dataset_from_index": 40361, "dataset_to_index": 40694, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 103, "tasks": [2], "length": 305, "dataset_from_index": 40695, "dataset_to_index": 40999, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 104, "tasks": [2], "length": 319, "dataset_from_index": 41000, "dataset_to_index": 41318, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 105, "tasks": [2], "length": 290, "dataset_from_index": 41319, "dataset_to_index": 41608, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 106, "tasks": [2], "length": 247, "dataset_from_index": 41609, "dataset_to_index": 41855, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 107, "tasks": [2], "length": 270, "dataset_from_index": 41856, "dataset_to_index": 42125, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 108, "tasks": [2], "length": 282, "dataset_from_index": 42126, "dataset_to_index": 42407, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 109, "tasks": [2], "length": 266, "dataset_from_index": 42408, "dataset_to_index": 42673, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 110, "tasks": [2], "length": 276, "dataset_from_index": 42674, "dataset_to_index": 42949, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 111, "tasks": [2], "length": 283, "dataset_from_index": 42950, "dataset_to_index": 43232, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 112, "tasks": [2], "length": 300, "dataset_from_index": 43233, "dataset_to_index": 43532, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 113, "tasks": [2], "length": 358, "dataset_from_index": 43533, "dataset_to_index": 43890, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 114, "tasks": [2], "length": 292, "dataset_from_index": 43891, "dataset_to_index": 44182, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 115, "tasks": [2], "length": 263, "dataset_from_index": 44183, "dataset_to_index": 44445, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 116, "tasks": [2], "length": 222, "dataset_from_index": 44446, "dataset_to_index": 44667, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 117, "tasks": [2], "length": 282, "dataset_from_index": 44668, "dataset_to_index": 44949, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 118, "tasks": [2], "length": 278, "dataset_from_index": 44950, "dataset_to_index": 45227, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 119, "tasks": [2], "length": 269, "dataset_from_index": 45228, "dataset_to_index": 45496, "robot_type": "g1", "instruction": "Unstack two cubes from each other."}
+{"episode_index": 120, "tasks": [3], "length": 460, "dataset_from_index": 45497, "dataset_to_index": 45956, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 121, "tasks": [3], "length": 433, "dataset_from_index": 45957, "dataset_to_index": 46389, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 122, "tasks": [3], "length": 440, "dataset_from_index": 46390, "dataset_to_index": 46829, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 123, "tasks": [3], "length": 397, "dataset_from_index": 46830, "dataset_to_index": 47226, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 124, "tasks": [3], "length": 438, "dataset_from_index": 47227, "dataset_to_index": 47664, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 125, "tasks": [3], "length": 501, "dataset_from_index": 47665, "dataset_to_index": 48165, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 126, "tasks": [3], "length": 494, "dataset_from_index": 48166, "dataset_to_index": 48659, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 127, "tasks": [3], "length": 415, "dataset_from_index": 48660, "dataset_to_index": 49074, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 128, "tasks": [3], "length": 476, "dataset_from_index": 49075, "dataset_to_index": 49550, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 129, "tasks": [3], "length": 536, "dataset_from_index": 49551, "dataset_to_index": 50086, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 130, "tasks": [3], "length": 544, "dataset_from_index": 50087, "dataset_to_index": 50630, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 131, "tasks": [3], "length": 483, "dataset_from_index": 50631, "dataset_to_index": 51113, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 132, "tasks": [3], "length": 618, "dataset_from_index": 51114, "dataset_to_index": 51731, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 133, "tasks": [3], "length": 396, "dataset_from_index": 51732, "dataset_to_index": 52127, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 134, "tasks": [3], "length": 476, "dataset_from_index": 52128, "dataset_to_index": 52603, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 135, "tasks": [3], "length": 434, "dataset_from_index": 52604, "dataset_to_index": 53037, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 136, "tasks": [3], "length": 453, "dataset_from_index": 53038, "dataset_to_index": 53490, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 137, "tasks": [3], "length": 478, "dataset_from_index": 53491, "dataset_to_index": 53968, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 138, "tasks": [3], "length": 435, "dataset_from_index": 53969, "dataset_to_index": 54403, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 139, "tasks": [3], "length": 501, "dataset_from_index": 54404, "dataset_to_index": 54904, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 140, "tasks": [3], "length": 490, "dataset_from_index": 54905, "dataset_to_index": 55394, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 141, "tasks": [3], "length": 433, "dataset_from_index": 55395, "dataset_to_index": 55827, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 142, "tasks": [3], "length": 530, "dataset_from_index": 55828, "dataset_to_index": 56357, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 143, "tasks": [3], "length": 578, "dataset_from_index": 56358, "dataset_to_index": 56935, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 144, "tasks": [3], "length": 494, "dataset_from_index": 56936, "dataset_to_index": 57429, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 145, "tasks": [3], "length": 456, "dataset_from_index": 57430, "dataset_to_index": 57885, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 146, "tasks": [3], "length": 455, "dataset_from_index": 57886, "dataset_to_index": 58340, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 147, "tasks": [3], "length": 489, "dataset_from_index": 58341, "dataset_to_index": 58829, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 148, "tasks": [3], "length": 519, "dataset_from_index": 58830, "dataset_to_index": 59348, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 149, "tasks": [3], "length": 520, "dataset_from_index": 59349, "dataset_to_index": 59868, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 150, "tasks": [3], "length": 563, "dataset_from_index": 59869, "dataset_to_index": 60431, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 151, "tasks": [3], "length": 569, "dataset_from_index": 60432, "dataset_to_index": 61000, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 152, "tasks": [3], "length": 469, "dataset_from_index": 61001, "dataset_to_index": 61469, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 153, "tasks": [3], "length": 521, "dataset_from_index": 61470, "dataset_to_index": 61990, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 154, "tasks": [3], "length": 463, "dataset_from_index": 61991, "dataset_to_index": 62453, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 155, "tasks": [3], "length": 457, "dataset_from_index": 62454, "dataset_to_index": 62910, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 156, "tasks": [3], "length": 494, "dataset_from_index": 62911, "dataset_to_index": 63404, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 157, "tasks": [3], "length": 472, "dataset_from_index": 63405, "dataset_to_index": 63876, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 158, "tasks": [3], "length": 432, "dataset_from_index": 63877, "dataset_to_index": 64308, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}
+{"episode_index": 159, "tasks": [3], "length": 523, "dataset_from_index": 64309, "dataset_to_index": 64831, "robot_type": "g1", "instruction": "Walk towards a desk, pick up a bottle, and put it in a container."}

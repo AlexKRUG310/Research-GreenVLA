@@ -1,24 +1,9 @@
 # --- ДАТАСЕТЫ И ТЯЖЕЛЫЕ ФАЙЛЫ ---
 *.parquet
-*.h5
-*.zarr
-*.mp4
-*.avi
-*.pcd
-*.npy
-*.lzma
-data/
-videos/
+he_raw_data/
 
 # --- ВЕСА МОДЕЛЕЙ И ЧЕКПОИНТЫ ---
-*.safetensors
-*.bin
-*.pth
-*.ckpt
 outputs/
-checkpoints/
-pretrained_models/
-*_lerobot_build/
 
 # --- СИСТЕМНЫЙ МУСОР PYTHON ---
 __pycache__/
@@ -39,17 +24,4 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# --- СКРЫТЫЕ GIT ПАПКИ ВНУТРИ ПРОЕКТОВ (чтобы не было конфликтов) ---
-GreenVLA/.git/
-Humanoid-Everyday/.git/
-humanoid_everyday_loco_lerobot/.git/
-he_raw_data/
-*.zip
-*.tar.gz
-he_raw_data/
-*.zip
-*.parquet
-*.safetensors
-outputs/
-pretrained_models/
-mujoco_menagerie/
+
