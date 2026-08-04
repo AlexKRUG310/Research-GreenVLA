@@ -11,3 +11,7 @@ control_mode: joint
 map_to_unified_space: false
 validation_episodes: null
 return_subtasks: false
+base_config:
+  _target_: lerobot.common.datasets.data_config.DataConfig
+  local_files_only: true
+  prompt_from_task: true

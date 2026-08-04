@@ -1,0 +1,86 @@
+# GreenVLA R1 Training Config for G1 Humanoid Everyday Loco
+assets_dir: "/home/human/Kruglov/GreenVLA/assets"
+pretrained_path: null
+
+# Policy Configuration
+policy:
+  _target_: lerobot.common.policies.greenvla_policy.modeling_greenvla_policy.GreenVLAPolicy
+  policy_config:
+    _target_: lerobot.common.policies.greenvla_policy.configuration_greenvla_policy.GreenVLAPolicyConfig
+    max_state_dim: 48
+    max_action_dim: 48
+    model_mode: "flow_matching"
+    tokenizer_max_length: 512
+    image_keys:
+      - egocentric
+
+# Training Configuration
+training:
+  output_dir: "/home/human/Kruglov/GreenVLA/outputs/g1_r1_loco_2b"
+  find_unused_parameters: false
+  seed: 42
+  log_freq: 100
+  save_freq: 1000
+  shuffle: true
+  prefetch_factor: 2
+  num_workers_validation: 2
+  mixed_precision: "bf16"
+  batch_size: 1
+  grad_accum_steps: 16
+  num_workers: 4
+  steps: 5000
+  validation_frequency: 500
+  max_validation_steps: 10
+  recompute_norm_stats: true
+  save_checkpoint: true
+  checkpoint_frequency: 1000
+
+# Robotics Dataset Configuration
+robotics_dataset:
+  _target_: lerobot.common.datasets.data_config.LeRobotG1DataConfig
+  asset_id: g1_humanoid_everyday_loco
+  repo_id: null
+  root_dir: "/home/human/Kruglov/humanoid_everyday_loco_lerobot"
+  action_sequence_keys: [action]
+  action_horizon: 1
+  action_offset: 0
+  action_sample_step: 1
+  state_dim: 28
+  control_mode: joint
+  map_to_unified_space: false
+  validation_episodes: null
+  return_subtasks: false
+  base_config:
+    _target_: lerobot.common.datasets.data_config.DataConfig
+    local_files_only: true
+    prompt_from_task: true
+
+# Qwen VLM Dataset (for mixed training, set to null if not used)
+qwen_vlm_dataset: null
+
+# Probability of sampling from robotics dataset vs VLM dataset
+robotics_prob: 1.0
+
+# Optimizer and Scheduler
+optimizer:
+  _target_: lerobot.common.optim.optimizers.AdamWConfig
+  lr: 1e-4
+  betas: [0.9, 0.95]
+  weight_decay: 1e-8
+  grad_clip_norm: 1.0
+
+scheduler:
+  _target_: lerobot.common.optim.schedulers.WarmupStableDecaySchedulerConfig
+  peak_lr: ${optimizer.lr}
+  decay_lr: 0.0
+  num_warmup_steps: 500
+  stable_phase_steps: 4000
+  num_decay_steps: 500
+
+# Logging Configuration
+logging:
+  clearml:
+    task:
+      project_name: "GreenVLA"
+      task_name: "g1_r1_loco_2b"
+      task_type: "training"
