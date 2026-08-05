@@ -1168,7 +1168,7 @@ def evaluate_policy(
                     processed_pred_shape = output_pred.shape
                     logging.debug(f"Processed output shape for {ds_name}: {processed_pred_shape}")
                     
-                    mse = float(np.mean((output_pred - output_gt) ** 2))
+                    mse = float(torch.mean((output_pred - output_gt) ** 2))
                     if "val_action_mse" in metrics_to_log:
                         metrics["val_action_mse"].update(mse)
                     

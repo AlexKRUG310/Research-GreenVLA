@@ -88,11 +88,11 @@ def run_inference(model_path, xml_path, num_steps=200, video_path="out.mp4", pro
     )
     policy.to(device).eval()
     
-    console.print(f"[bold cyan]🤖 Инициализация MuJoCo...[/bold cyan]")
+    console.print(f"[bold cyan] Инициализация MuJoCo...[/bold cyan]")
     env = G1MuJoCoEnv(xml_path)
     obs = env.reset()
     
-    console.print(f"[bold]📡 Камера: head_camera | Промпт: {prompt}[/bold]\n")
+    console.print(f"[bold] Промпт: {prompt}[/bold]\n")
     
     video_writer = imageio.get_writer(video_path, fps=30)
     
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", type=str, default="/home/human/Kruglov/GreenVLA/outputs/g1_r1_loco_2b/checkpoints/last")
-    parser.add_argument("--xml-path", type=str, default="/home/human/Kruglov/mujoco_menagerie/unitree_g1/scene_table_object.xml")
+    parser.add_argument("--xml-path", type=str, default="/home/human/Kruglov/g1_madel/unitree_g1/scene_table_object.xml")
     parser.add_argument("--num-steps", type=int, default=200)
     parser.add_argument("--video-path", type=str, default="/home/human/Kruglov/g1_pickup_smooth.mp4")
     parser.add_argument("--prompt", type=str, default="pick up cube")
