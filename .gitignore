@@ -6,6 +6,8 @@ he_raw_data/
 # --- ВЕСА МОДЕЛЕЙ И ЧЕКПОИНТЫ ---
 outputs/
 
+#Кэш
+.cache/
 # --- СИСТЕМНЫЙ МУСОР PYTHON ---
 __pycache__/
 *.py[cod]
