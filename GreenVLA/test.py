@@ -1,8 +1,9 @@
-import time
 #!/usr/bin/env python3
 """
-Инференс GreenVLA для Unitree G1 (исправленная версия).
+Инференс GreenVLA для Unitree G1 с максимальной плавностью (30 Гц).
+Задача: stack the cubes
 """
+import time
 import numpy as np
 import torch
 import mujoco
@@ -39,17 +40,8 @@ class G1MuJoCoEnv:
                 console.print(f"[green]Найдена камера 'head_camera' (ID: {i})[/green]")
                 break
         
-        # Маппинг только для рук (28 суставов)
-        # Индексы актуаторов в вашем XML (начиная с 0):
-        # Руки начинаются с 15-го актуатора (left_shoulder_pitch_joint)
+        # Автоматическое сопоставление суставов по именам
         self.actuator_mapping = {}
-        model_idx = 0
-        # Левая рука (7 суставов плеча/локтя/запястья + 7 кисти = 14)
-        left_arm_indices = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28] # Проверьте по XML
-        # Правая рука (14)
-        right_arm_indices = [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42] # Проверьте по XML
-        
-        # Автоматическое сопоставление по именам суставов, чтобы не гадать с индексами
         joint_map_names = [
             "left_shoulder_pitch_joint", "left_shoulder_roll_joint", "left_shoulder_yaw_joint",
             "left_elbow_joint", "left_wrist_roll_joint", "left_wrist_pitch_joint", "left_wrist_yaw_joint",
@@ -107,7 +99,7 @@ class G1MuJoCoEnv:
         
         return self._get_obs()
 
-def run_inference(model_path, xml_path, num_steps=200, video_path="out.mp4", prompt="pick up cube"):
+def run_inference(model_path, xml_path, num_steps=500, video_path="g1_output.mp4", prompt="stack the cubes"):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     console.print(f"\n[cyan]Загрузка модели: {model_path}[/cyan]")
     
@@ -127,46 +119,49 @@ def run_inference(model_path, xml_path, num_steps=200, video_path="out.mp4", pro
     video_writer = imageio.get_writer(video_path, fps=30)
     
     prev_action = None
-    alpha = 0.6
+    alpha = 1.85  # Очень сильное сглаживание для максимальной плавности
+    
+    # Параметры для фиксации частоты 30 Гц
+    target_dt =0.15  # 1 действие в секунду
+    
+    console.print("[yellow]Запуск цикла инференса (30 Гц, максимальная плавность)...[/yellow]\n")
 
     for step in range(num_steps):
+        start_time = time.time()
+        
+        # 1. Формирование наблюдений
         raw_obs = {
             "prompt": prompt,
             "observation.state": obs["state"],
             "observation.image.egocentric": obs["image"],
         }
         
+        # 2. Применение входных трансформов
         transformed_obs = input_transforms(raw_obs)
         preprocessed = torch_preprocess_dict_inference(transformed_obs)
         batch = move_dict_to_batch_for_inference(preprocessed, device=device)
         
-        # === ИСПРАВЛЕНИЕ ОБРАБОТКИ ИЗОБРАЖЕНИЯ ===
+        # 3. Ручная подготовка изображения (гарантия формата B,C,H,W)
         if "observation.image.egocentric" in preprocessed:
             img_np = preprocessed["observation.image.egocentric"]
-            
-            # 1. В тензор и float
             img_tensor = torch.from_numpy(img_np).float() / 255.0
             
-            # 2. Проверка размерностей: если (H, W, C) -> (C, H, W)
             if img_tensor.dim() == 3:
                 h, w, c = img_tensor.shape
                 if c == 3:
-                    img_tensor = img_tensor.permute(2, 0, 1) # (3, H, W)
+                    img_tensor = img_tensor.permute(2, 0, 1)
             
-            # 3. Добавление батча: (C, H, W) -> (1, C, H, W)
             if img_tensor.dim() == 3:
                 img_tensor = img_tensor.unsqueeze(0)
             
-            # 4. Ресайз до 448x448
             if img_tensor.shape[-2:] != (448, 448):
                 img_tensor = F.interpolate(img_tensor, size=(448, 448), mode="bilinear", align_corners=False)
             
-            # 5. Запись в batch
             if "image" not in batch:
                 batch["image"] = {}
             batch["image"]["egocentric"] = img_tensor.to(device)
-        # =========================================
         
+        # 4. Инференс модели
         with torch.inference_mode():
             raw_actions = policy.select_action(batch)
         
@@ -179,20 +174,32 @@ def run_inference(model_path, xml_path, num_steps=200, video_path="out.mp4", pro
         
         action = actions_dict["actions"][0, 0, :28]
         
+        # 5. Сглаживание действий (очень сильное для плавности)
         if prev_action is not None:
             action = alpha * action + (1 - alpha) * prev_action
         prev_action = action.copy()
 
+        # 6. Шаг симуляции
         obs = env.step(action)
         video_writer.append_data(obs["image"])
         
-        if step % 20 == 0:
+        # Логирование
+        if step % 50 == 0:
             table = Table(title=f"Шаг {step}/{num_steps}")
             table.add_column("Сустав", style="cyan")
             table.add_column("Action (rad)", justify="right", style="green")
             for name, val in zip(JOINT_NAMES, action):
                 table.add_row(name, f"{val:.3f}")
             console.print(table)
+        
+        # 7. Контроль частоты (Fix FPS to 30Hz)
+        elapsed_time = time.time() - start_time
+        sleep_time = target_dt - elapsed_time
+        if sleep_time > 0:
+            time.sleep(sleep_time)
+        else:
+            if step % 50 == 0:
+                console.print(f"[yellow]Warning: Step {step} took {elapsed_time:.4f}s (> {target_dt:.4f}s). Cannot maintain 30Hz.[/yellow]")
     
     video_writer.close()
     console.print(f"\n[bold green]Готово: {video_path}[/bold green]")
@@ -200,11 +207,11 @@ def run_inference(model_path, xml_path, num_steps=200, video_path="out.mp4", pro
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-path", type=str, default="/home/human/Kruglov/GreenVLA/outputs/g1_r1_loco_2b/checkpoints/last")
-    parser.add_argument("--xml-path", type=str, required=True)
-    parser.add_argument("--num-steps", type=int, default=200)
+    parser.add_argument("--model-path", type=str, default="/home/human/Kruglov/GreenVLA/outputs/g1_r1_2b/checkpoints/last")
+    parser.add_argument("--xml-path", type=str, default="/home/human/Kruglov/g1_model/unitree_g1/scene_table_object.xml")
+    parser.add_argument("--num-steps", type=int, default=500)
     parser.add_argument("--video-path", type=str, default="g1_output.mp4")
-    parser.add_argument("--prompt", type=str, default="pick up cube")
+    parser.add_argument("--prompt", type=str, default="stack the yellow cubes")
     args = parser.parse_args()
     
     run_inference(args.model_path, args.xml_path, args.num_steps, args.video_path, args.prompt)
