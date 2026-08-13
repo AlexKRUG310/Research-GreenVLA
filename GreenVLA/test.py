@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Инференс GreenVLA для Unitree G1 с максимальной плавностью (30 Гц).
+Инференс GreenVLA для Unitree G1.
 Задача: stack the cubes
+Частота не фиксируется искусственно (максимально быстрый цикл).
 """
 import time
 import numpy as np
@@ -94,6 +95,7 @@ class G1MuJoCoEnv:
                 mujoco_act_idx = self.actuator_mapping[model_idx]
                 self.data.ctrl[mujoco_act_idx] = float(action[model_idx])
         
+        # Фиксированное число шагов физики для стабильности
         for _ in range(10):
             mujoco.mj_step(self.model, self.data)
         
@@ -119,12 +121,9 @@ def run_inference(model_path, xml_path, num_steps=500, video_path="g1_output.mp4
     video_writer = imageio.get_writer(video_path, fps=30)
     
     prev_action = None
-    alpha = 1.85  # Очень сильное сглаживание для максимальной плавности
+    alpha = 1.85  # Коэффициент сглаживания
     
-    # Параметры для фиксации частоты 30 Гц
-    target_dt =0.15  # 1 действие в секунду
-    
-    console.print("[yellow]Запуск цикла инференса (30 Гц, максимальная плавность)...[/yellow]\n")
+    console.print("[yellow]Запуск цикла инференса (без фиксации FPS, максимальная скорость)...[/yellow]\n")
 
     for step in range(num_steps):
         start_time = time.time()
@@ -174,7 +173,7 @@ def run_inference(model_path, xml_path, num_steps=500, video_path="g1_output.mp4
         
         action = actions_dict["actions"][0, 0, :28]
         
-        # 5. Сглаживание действий (очень сильное для плавности)
+        # 5. Сглаживание действий
         if prev_action is not None:
             action = alpha * action + (1 - alpha) * prev_action
         prev_action = action.copy()
@@ -185,22 +184,16 @@ def run_inference(model_path, xml_path, num_steps=500, video_path="g1_output.mp4
         
         # Логирование
         if step % 50 == 0:
-            table = Table(title=f"Шаг {step}/{num_steps}")
+            elapsed = time.time() - start_time
+            table = Table(title=f"Шаг {step}/{num_steps} (Time: {elapsed:.3f}s)")
             table.add_column("Сустав", style="cyan")
             table.add_column("Action (rad)", justify="right", style="green")
             for name, val in zip(JOINT_NAMES, action):
                 table.add_row(name, f"{val:.3f}")
             console.print(table)
         
-        # 7. Контроль частоты (Fix FPS to 30Hz)
-        elapsed_time = time.time() - start_time
-        sleep_time = target_dt - elapsed_time
-        if sleep_time > 0:
-            time.sleep(sleep_time)
-        else:
-            if step % 50 == 0:
-                console.print(f"[yellow]Warning: Step {step} took {elapsed_time:.4f}s (> {target_dt:.4f}s). Cannot maintain 30Hz.[/yellow]")
-    
+        # Блок фиксации частоты УДАЛЕН. Цикл выполняется так быстро, как позволяет GPU/CPU.
+
     video_writer.close()
     console.print(f"\n[bold green]Готово: {video_path}[/bold green]")
 
@@ -211,7 +204,7 @@ if __name__ == "__main__":
     parser.add_argument("--xml-path", type=str, default="/home/human/Kruglov/g1_model/unitree_g1/scene_table_object.xml")
     parser.add_argument("--num-steps", type=int, default=500)
     parser.add_argument("--video-path", type=str, default="g1_output.mp4")
-    parser.add_argument("--prompt", type=str, default="stack the yellow cubes")
+    parser.add_argument("--prompt", type=str, default="stack the cubes")
     args = parser.parse_args()
     
     run_inference(args.model_path, args.xml_path, args.num_steps, args.video_path, args.prompt)
