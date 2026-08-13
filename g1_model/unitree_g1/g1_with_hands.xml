@@ -7,7 +7,7 @@
     <default class="g1">
       <site rgba="1 0 0 1" size="0.01" group="5"/>
       <joint armature="0.01" frictionloss="0.3"/>
-      <position kp="600" dampratio="1" inheritrange="1"/>
+      <position kp="300" dampratio="5" inheritrange="1"/>
       <default class="visual">
         <geom group="2" type="mesh" contype="0" conaffinity="0" density="0" material="metal"/>
       </default>
@@ -461,13 +461,13 @@
     <position class="g1" name="left_wrist_roll_joint" joint="left_wrist_roll_joint"/>
     <position class="g1" name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint"/>
     <position class="g1" name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint"/>
-    <position class="g1" name="left_hand_thumb_0_joint" joint="left_hand_thumb_0_joint"/>
-    <position class="g1" name="left_hand_thumb_1_joint" joint="left_hand_thumb_1_joint"/>
-    <position class="g1" name="left_hand_thumb_2_joint" joint="left_hand_thumb_2_joint"/>
-    <position class="g1" name="left_hand_middle_0_joint" joint="left_hand_middle_0_joint"/>
-    <position class="g1" name="left_hand_middle_1_joint" joint="left_hand_middle_1_joint"/>
-    <position class="g1" name="left_hand_index_0_joint" joint="left_hand_index_0_joint"/>
-    <position class="g1" name="left_hand_index_1_joint" joint="left_hand_index_1_joint"/>
+    <position class="g1" name="left_hand_thumb_0_joint" joint="left_hand_thumb_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_thumb_1_joint" joint="left_hand_thumb_1_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_thumb_2_joint" joint="left_hand_thumb_2_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_middle_0_joint" joint="left_hand_middle_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_middle_1_joint" joint="left_hand_middle_1_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_index_0_joint" joint="left_hand_index_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="left_hand_index_1_joint" joint="left_hand_index_1_joint" kp="400" dampratio="5"/>
 
     <position class="g1" name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint"/>
     <position class="g1" name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint"/>
@@ -476,13 +476,13 @@
     <position class="g1" name="right_wrist_roll_joint" joint="right_wrist_roll_joint"/>
     <position class="g1" name="right_wrist_pitch_joint" joint="right_wrist_pitch_joint"/>
     <position class="g1" name="right_wrist_yaw_joint" joint="right_wrist_yaw_joint"/>
-    <position class="g1" name="right_hand_thumb_0_joint" joint="right_hand_thumb_0_joint"/>
-    <position class="g1" name="right_hand_thumb_1_joint" joint="right_hand_thumb_1_joint"/>
-    <position class="g1" name="right_hand_thumb_2_joint" joint="right_hand_thumb_2_joint"/>
-    <position class="g1" name="right_hand_index_0_joint" joint="right_hand_index_0_joint"/>
-    <position class="g1" name="right_hand_index_1_joint" joint="right_hand_index_1_joint"/>
-    <position class="g1" name="right_hand_middle_0_joint" joint="right_hand_middle_0_joint"/>
-    <position class="g1" name="right_hand_middle_1_joint" joint="right_hand_middle_1_joint"/>
+    <position class="g1" name="right_hand_thumb_0_joint" joint="right_hand_thumb_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_thumb_1_joint" joint="right_hand_thumb_1_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_thumb_2_joint" joint="right_hand_thumb_2_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_index_0_joint" joint="right_hand_index_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_index_1_joint" joint="right_hand_index_1_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_middle_0_joint" joint="right_hand_middle_0_joint" kp="400" dampratio="5"/>
+    <position class="g1" name="right_hand_middle_1_joint" joint="right_hand_middle_1_joint" kp="400" dampratio="5"/>
   </actuator>
 
   <sensor>

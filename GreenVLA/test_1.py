@@ -204,7 +204,7 @@ if __name__ == "__main__":
     parser.add_argument("--xml-path", type=str, default="/home/human/Kruglov/g1_model/unitree_g1/scene_table_object.xml")
     parser.add_argument("--num-steps", type=int, default=500)
     parser.add_argument("--video-path", type=str, default="g1_output.mp4")
-    parser.add_argument("--prompt", type=str, default="stack the blue  cubes")
+    parser.add_argument("--prompt", type=str, default="stack the cubes with left hand")
     args = parser.parse_args()
     
     run_inference(args.model_path, args.xml_path, args.num_steps, args.video_path, args.prompt)
