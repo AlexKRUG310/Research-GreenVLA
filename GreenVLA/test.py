@@ -121,7 +121,7 @@ def run_inference(model_path, xml_path, num_steps=500, video_path="g1_output.mp4
     video_writer = imageio.get_writer(video_path, fps=30)
     
     prev_action = None
-    alpha = 1.85  # Коэффициент сглаживания
+    alpha = 1.0  # Коэффициент сглаживания
     
     console.print("[yellow]Запуск цикла инференса (без фиксации FPS, максимальная скорость)...[/yellow]\n")
 
